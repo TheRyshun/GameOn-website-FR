@@ -47,13 +47,13 @@ let LogQtn;
 
 const ValidatePrenom = () => {
   //Variable sur l'input Prénom
-  const PrenomValue = document.getElementById("first").value;
+  const PrenomValue = document.getElementById("first").value; 
   const errorPrenom = document.querySelector("#prenom-error");
   const borderPrenom = document.querySelector(".inpPrenom");
-
+  const PrenomValueTrim = PrenomValue.trim();   
   // Quand il n'y a aucun caractère alors
   // la border deviens rouge et un champ de texte apparaît pour signaler l’utilisateur.
-  if (PrenomValue === "") {
+  if (PrenomValueTrim === "") {
     borderPrenom.style.border = "0.8px outset red";
     errorPrenom.textContent = "Veuillez renseigner ce champ";
     return false;
@@ -61,7 +61,7 @@ const ValidatePrenom = () => {
 
   // Si l’input n’a pas pas au dessus de 2 caractères alors
   // la border deviens rouge et un champ de texte apparaît pour signaler l’utilisateur.
-  if (PrenomValue.length <= 1) {
+  if (PrenomValueTrim.length <= 1) {
     borderPrenom.style.border = "0.8px outset red";
     errorPrenom.textContent =
       "Veuillez entrer 2 caractères ou plus pour le champ du prénom.";
@@ -69,10 +69,10 @@ const ValidatePrenom = () => {
   }
   // Si l'input à plus de deux caractères alors
   // aucune border et l'alerte disparait (texte)
-  if (PrenomValue.length >= 2) {
+  if (PrenomValueTrim.length >= 2) {
     borderPrenom.style.border = "0.8px outset #ccc";
     errorPrenom.textContent = "";
-    LogPrenom = PrenomValue;
+    LogPrenom = PrenomValueTrim;
     return true;
   }
 };
@@ -88,10 +88,11 @@ const ValidateNom = () => {
   const NomValue = document.getElementById("last").value;
   const errorNom = document.querySelector("#nom-error");
   const borderNom = document.querySelector(".inpNom");
+  const NomValueTrim = NomValue.trim();   
 
   // Quand il n'y a aucun caractère alors
   // la border deviens rouge et un champ de texte apparaît pour signaler l’utilisateur.
-  if (NomValue === "") {
+  if (NomValueTrim === "") {
     borderNom.style.border = "0.8px outset red";
     errorNom.textContent = "Veuillez renseigner ce champ";
     return false;
@@ -99,7 +100,7 @@ const ValidateNom = () => {
 
   // Si l’input n’a pas pas au dessus de 2 caractères alors
   // la border deviens rouge et un champ de texte apparaît pour signaler l’utilisateur.
-  if (NomValue.length <= 1) {
+  if (NomValueTrim.length <= 1) {
     borderNom.style.border = "0.8px outset red";
     errorNom.textContent =
       "Veuillez entrer 2 caractères ou plus pour le champ du nom.";
@@ -108,10 +109,10 @@ const ValidateNom = () => {
 
   // Si l'input à plus de deux caractères alors
   // aucune border et l'alerte disparait (texte)
-  if (NomValue.length >= 2) {
+  if (NomValueTrim.length >= 2) {
     borderNom.style.border = "0.8px outset #ccc";
     errorNom.textContent = "";
-    LogNom = NomValue;
+    LogNom = NomValueTrim;
     return true;
   }
 };
@@ -130,6 +131,7 @@ const ValidateEmail = () => {
   const EmailValue = document.getElementById("email").value;
   const errorEmail = document.querySelector("#email-error");
   const borderEmail = document.querySelector(".inpEmail");
+  const EmailValueTrim = EmailValue.trim();   
 
   // Si l'input ne contient pas les strings de la variable "re" correctement alors
   // la border deviens rouge et un champ de texte apparaît pour signaler l’utilisateur.
@@ -142,7 +144,7 @@ const ValidateEmail = () => {
     // aucune border et l'alerte disparait (texte)
     borderEmail.style.border = "0.8px outset #ccc";
     errorEmail.textContent = "";
-    LogEmail = EmailValue;
+    LogEmail = EmailValueTrim;
     return true;
   }
 };
@@ -322,7 +324,7 @@ form.addEventListener("submit", (e) => {
   const CheckLOC = ValidateLOC();
   const CheckCOND = ValidateCOND();
 
-  if (CheckPrenom && CheckNom && CheckEmail && CheckDate && CheckQTN && CheckLOC && CheckCOND) {
+  if (CheckPrenom/* && CheckNom && CheckEmail && CheckDate && CheckQTN && CheckLOC && CheckCOND*/) {
     
   console.log(
     "Prénom : " +
