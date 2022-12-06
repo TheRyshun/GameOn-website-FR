@@ -232,6 +232,41 @@ input[data-error]::after {
     font-size: 0.4em;
     color: red;
 } */
+
+.error-message{
+  color: #FF4E60;
+  font-size: 0.9rem;
+}
+
+.validate {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 750px;
+  position: relative;
+}
+
+.validate button {
+  position: relative;
+  top: 250px;
+  background: #fe142f;
+  padding: 15px 90px;
+  color: #fff;
+  border: 0px solid #232323;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.validate p {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 400;
+  width: 290px;
+}
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
