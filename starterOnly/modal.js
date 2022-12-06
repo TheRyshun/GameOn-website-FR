@@ -324,7 +324,7 @@ form.addEventListener("submit", (e) => {
   const CheckLOC = ValidateLOC();
   const CheckCOND = ValidateCOND();
 
-  if (CheckPrenom/* && CheckNom && CheckEmail && CheckDate && CheckQTN && CheckLOC && CheckCOND*/) {
+  if (CheckPrenom && CheckNom && CheckEmail && CheckDate && CheckQTN && CheckLOC && CheckCOND) {
     
   console.log(
     "Prénom : " +
