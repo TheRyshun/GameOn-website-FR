@@ -25,7 +25,7 @@
 
 1. Download le code
     ```
-    git clone https://github.com/TheRyshun/Front-End-Fisheye.git
+    git clone https://github.com/TheRyshun/GameOn-website-FR.git
     ```
     
 2. Live Server Extension
